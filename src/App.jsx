@@ -4,21 +4,18 @@ class App extends Component {
 	state = {
 		name: "Vivek",
 	};
-
-	name2 = () => {
-		this.setState({ name: "John Smith" });
-	};
-	name1 = () => {
-		this.setState({ name: "Vivek Sundaray" });
-	};
-
+	changeName = () => {
+		if (this.state.name === "Vivek"){
+			this.setState({name: "John"})
+		}else{
+			this.setState({name: "Vivek"})
+		}
+	}
 	render() {
-		const initialName = this.state.name;
 		return (
-			<div>
-				<span>{initialName}</span>
-				<button onClick={this.name1}>name1</button>
-				<button onClick={this.name2}>name2</button>
+			<div className="container">
+				<div>{this.state.name}</div>
+				<button onClick={this.changeName} className="btn btn-primary">ChangeName</button>
 			</div>
 		);
 	}
