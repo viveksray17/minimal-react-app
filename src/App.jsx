@@ -1,9 +1,8 @@
-import { Component } from "react";
+import { useState } from "react";
 
-class App extends Component {
-	render() {
-		return <div>Hello World</div>;
-	}
+function App(){
+	const [name, setName] = useState("vivek");
+	return <div>Hello {name}</div>
 }
 
 export default App;
